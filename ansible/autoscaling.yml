@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Create or Update Auto Scalling Group
+      ec2_asg:
+        name: "{{ app }}"
+        region: "{{ region }}"
+        launch_config_name: "{{ new_lc }}"
+        health_check_period: 300
+        health_check_type: ELB
+        desired_capacity: "{{ desired_instances }}"
+        min_size: 1
+        max_size: 3
+        vpc_zone_identifier: "{{ vpc_subnets.subnets|map(attribute='id')|list }}"
+        load_balancers: "{{ app }}"
+        replace_all_instances: true
+        wait_for_instances: true
+      when: update_lc

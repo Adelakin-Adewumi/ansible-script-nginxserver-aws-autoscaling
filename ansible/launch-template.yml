@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: launch new instance from template
+      amazon.aws.ec2_instance:
+        name: amazonubuntu2b
+        launch_template: 
+          name: amazonubuntu2_httpd_template
+        security_group: ssh-web
+        vpc_subnet_id: subnet-07bb6501337e4f87b
+      tags:
+        - holiday-challenge_template

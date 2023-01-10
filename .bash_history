@@ -53,3 +53,20 @@ ansible-playbook nginx.yml -i inventory --check
 sudo nano nginx.yml
 ansible-playbook nginx.yml -i inventory --check
 ansible-playbook nginx.yml -i inventory 
+ansible-playbook launch-template.yml --check
+sudo nano lauch-template.yml
+ansible-playbook launch-template.yml --check
+sudo nano lauch-template.yml
+ansible-playbook launch-template.yml --check
+ansible-playbook launch-template.yml 
+ansible-playbook autoscaling.yml --check
+sudo nano autoscaling.yml
+ansible-playbook autoscaling.yml --check
+sudo nano autoscaling.yml
+ansible-playbook autoscaling.yml --check
+ansible-playbook autoscaling.yml --check
+ansible-playbook autoscaling.yml --check
+sudo nano autoscaling.yml
+sudo nano autoscaling.yml
+ansible-playbook autoscaling.yml --check
+ansible-playbook autoscaling.yml 
